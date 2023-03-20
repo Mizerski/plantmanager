@@ -23,5 +23,5 @@ Aplicativo para lhe ajudar a lembrar de cuidar de suas plantas de forma fácil d
 
 ## Screenshot do App
 
-# ![screenshot](../plantmanager/.github/Screen%20Shot%202023-03-20%20at%2015.34.44.png)
+# ![screenshot](.github/Screen%20Shot%202023-03-20%20at%2015.34.44.png)
 

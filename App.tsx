@@ -1,6 +1,8 @@
 import React from "react";
-import { Welcome } from "./src/pages/welcome_page";
+import { UserIndetify } from "./src/pages/user_indetify";
 import AppLoading from "expo-app-loading";
+import { Welcome } from "./src/pages/welcome_page";
+import { Confirmation} from './src/pages/confirmation_page'
 import {
   useFonts,
   Jost_400Regular,
@@ -12,5 +14,7 @@ export default function App() {
 
   if (!fontsLoaded) return <AppLoading />;
 
-  return <Welcome />;
+  return (<UserIndetify/>)
+  // return (<Welcome/>)
+
 }

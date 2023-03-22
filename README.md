@@ -21,7 +21,12 @@ Aplicativo para lhe ajudar a lembrar de cuidar de suas plantas de forma fácil d
 - Inicie seu app com `expo start`
 - Inicie a fake api com `json-server ./src/services server.json --host 192.168.1.4 --port 3333 --delay 700`. Substitua o host pelo seu endereço IP local. Faça o mesmo no arquivo API dentro de services.
 
-## Screenshot do App
+## 📸 Screenshot do App
 
-# ![screenshot](.github/Screen%20Shot%202023-03-20%20at%2015.34.44.png)
+<p>
 
+<img src=".github/Screen%20Shot%202023-03-20%20at%2015.34.44.png" width = "250" >
+<img src=".github/Screenshot%202023-03-22%20at%2011.50.37.png" width = "302" >
+<img src=".github/Screenshot%202023-03-22%20at%2011.49.29.png" width = "350" >
+
+</p>

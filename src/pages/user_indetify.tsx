@@ -14,7 +14,7 @@ import {
 import { TouchableOpacity } from "react-native-gesture-handler";
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
-import { Button } from "../components/button";
+import { ButtonUserIndetify } from "../components/button";
 
 export function UserIndetify() {
   const [isFocused, setIsFocused] = useState(false);
@@ -64,8 +64,8 @@ export function UserIndetify() {
                 onChangeText={handleInputChanges}
               />
               <View style={styles.footer}>
-                <TouchableOpacity onPress={handleStart}>
-                  <Button />
+                <TouchableOpacity onPress={handleStart} >
+                  <ButtonUserIndetify />
                 </TouchableOpacity>
               </View>
             </View>

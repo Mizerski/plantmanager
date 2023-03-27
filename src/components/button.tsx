@@ -4,9 +4,9 @@ import { TouchableOpacity, StyleSheet, Text } from "react-native";
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 
-export function Button() {
+export function ButtonUserIndetify() {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} activeOpacity={0.8}>
       <Text style={styles.text}>Confirmar</Text>
     </TouchableOpacity>
   );

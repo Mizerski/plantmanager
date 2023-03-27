@@ -1,18 +1,30 @@
-import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
+
 import colors from "../../styles/colors";
 import { Feather } from "@expo/vector-icons";
+import React from "react";
+
+import { useNavigation } from "@react-navigation/native";
 
 export function ButtonWelcome() {
+  const navigation = useNavigation();
+
+  function handleStart() {
+    navigation.navigate('UserIndetify');
+  }
+
   return (
-    <TouchableOpacity style={styles.button} activeOpacity={0.8}>
+    <TouchableOpacity
+      style={styles.button}
+      activeOpacity={0.8}
+      onPress={handleStart}
+    >
       <Text style={styles.buttonText}>
-        <Feather name="chevron-right" style ={styles.buttonIcon} /> 
+        <Feather name="chevron-right" style={styles.buttonIcon} />
       </Text>
     </TouchableOpacity>
   );
 }
-
 const styles = StyleSheet.create({
   button: {
     backgroundColor: colors.green,
@@ -28,8 +40,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   //
-  buttonIcon:{
-    fontSize:32,
-  }
-
+  buttonIcon: {
+    fontSize: 32,
+  },
 });

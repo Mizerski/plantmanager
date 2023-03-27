@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "space-around",
-    paddingHorizontal:20,
+    paddingHorizontal: 20,
   },
   //
   title: {

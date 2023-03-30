@@ -1,0 +1,62 @@
+{
+    "plants_water_frequencies": [
+        {
+            "key": "day",
+            "title": "Todos os dias"
+        },
+        {
+            "key": "week",
+            "title": "A cada semana"
+        }
+    ],
+    "plants_environments": [
+        {
+            "key": "living_rom",
+            "title": "Sala"
+        },
+        {
+            "key": "bedroom",
+            "title": "Quarto"
+        },
+        {
+            "key": "kitchen",
+            "title": "Cozinha"
+        },
+        {
+            "key": "bathroom",
+            "title": "Banheiro"
+        }
+    ],
+    "plants": [
+        {
+            "id": 1,
+            "name": "Aningapara",
+            "about": "É uma espécie tropical que tem crescimento rápido e fácil manuseio.",
+            "water_tips": "Mantenha a terra sempre húmida sem encharcar. Regue 2 vezes na semana.",
+            "photo": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-plantmanager/1.svg",
+            "environments": [
+                "living_rom",
+                "kitchen"
+            ],
+            "frequency": {
+                "times": 2,
+                "repeat_every": "week"
+            }
+        },
+        {
+            "id": 2,
+            "name": "Zamioculca",
+            "about": "Apesar de florescer na primavera, fica o ano todo bonita e verdinha.",
+            "water_tips": "Utilize vasos com furos e pedras no fundo para facilitar a drenagem. Regue 1 vez no dia.",
+            "photo": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-plantmanager/2.svg",
+            "environments": [
+                "living_rom",
+                "bedroom"
+            ],
+            "frequency": {
+                "times": 1,
+                "repeat_every": "day"
+            }
+        }
+    ]
+}

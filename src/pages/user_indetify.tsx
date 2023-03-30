@@ -11,7 +11,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 import { ButtonUserIndetify } from "../components/button";
@@ -64,9 +64,7 @@ export function UserIndetify() {
                 onChangeText={handleInputChanges}
               />
               <View style={styles.footer}>
-                <TouchableOpacity onPress={handleStart} >
-                  <ButtonUserIndetify />
-                </TouchableOpacity>
+                <ButtonUserIndetify title="Confirmar" onPress={handleStart} />
               </View>
             </View>
           </View>

@@ -10,14 +10,14 @@ import {
   Platform,
   TouchableWithoutFeedback,
   Keyboard,
-  Alert,
 } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import colors from "../../styles/colors";
-import fonts from "../../styles/fonts";
-import { ButtonUserIndetify } from "../components/button";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import colors from "../../../styles/colors";
+import { ButtonUserIndetify } from "../components/button_userIndetify";
+import fonts from "../../../styles/fonts";
+import { TitleComponent } from "../components/title_component";
 
-export function UserIndetify() {
+export function AUserIndetify() {
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
   const [name, setName] = useState<string>();
@@ -36,10 +36,6 @@ export function UserIndetify() {
   const navigation = useNavigation();
 
   function handleStart() {
-    if (!name) return Alert.alert("Por favor me diga seu nome 👉👈");
-
-    AsyncStorage.setItem('@plantmanager:user', name);
-
     navigation.navigate("Confirmation");
   }
 
@@ -47,15 +43,14 @@ export function UserIndetify() {
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView
         style={styles.content}
-        behavior={Platform.OS === "ios" ? "padding" : "height"}>
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+      >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.content}>
             <View style={styles.form}>
               <View style={styles.header}>
                 <Text style={styles.emote}>{isFilled ? "😄" : "😀"}</Text>
-                <Text style={styles.title}>
-                  Como podemos {"\n"} chamar você?
-                </Text>
+                <TitleComponent text={`Como podemos \nchamar você?`} style={{marginTop: 15}}/>
               </View>
               <TextInput
                 style={[
@@ -68,7 +63,9 @@ export function UserIndetify() {
                 onChangeText={handleInputChanges}
               />
               <View style={styles.footer}>
-                <ButtonUserIndetify title="Confirmar" onPress={handleStart} />
+                <TouchableOpacity onPress={handleStart} >
+                  <ButtonUserIndetify/>
+                </TouchableOpacity>
               </View>
             </View>
           </View>
@@ -104,14 +101,6 @@ const styles = StyleSheet.create({
     marginTop: 50,
     padding: 10,
     textAlign: "center",
-  },
-  title: {
-    fontSize: 24,
-    lineHeight: 32,
-    textAlign: "center",
-    color: colors.heading,
-    fontFamily: fonts.heading,
-    marginTop: 20,
   },
   footer: {
     marginTop: 40,

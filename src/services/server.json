@@ -11,7 +11,7 @@
     ],
     "plants_environments": [
         {
-            "key": "living_rooom",
+            "key": "living_room",
             "title": "Sala"
         },
         {
@@ -25,10 +25,6 @@
         {
             "key": "bathroom",
             "title": "Banheiro"
-        },
-        {
-            "key": "balcony",
-            "title": "Sacada"
         }
     ],
     "plants": [
@@ -54,7 +50,7 @@
             "water_tips": "Utilize vasos com furos e pedras no fundo para facilitar a drenagem. Regue 1 vez no dia.",
             "photo": "https://storage.googleapis.com/golden-wind/nextlevelweek/05-plantmanager/2.svg",
             "environments": [
-                "living_rom",
+                "living_room",
                 "bedroom"
             ],
             "frequency": {

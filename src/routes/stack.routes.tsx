@@ -3,7 +3,7 @@ import React from "react";
 import { Welcome } from "../pages/welcome_page";
 import { UserIndetify } from "../pages/user_indetify";
 import { Confirmation } from "../pages/confirmation_page";
-import { PlantsSelect } from "../pages/plants_select";
+import { PlantSelect } from "../pages/plants_select";
 
 //Android
 import { AWelcome } from "../android/pages/welcome_page";
@@ -31,7 +31,7 @@ const AppRoutes: React.FC = () => (
 
     <StackRoutes.Screen name="Confirmation" component={Platform.OS =="ios"?Confirmation:AConfirmation} />
 
-    <StackRoutes.Screen name="PlantsSelect" component={Platform.OS =="ios"?PlantsSelect:APlantsSelect} />
+    <StackRoutes.Screen name="PlantSelect" component={PlantSelect} />
   </StackRoutes.Navigator>
 );
 

@@ -10,7 +10,7 @@ export function Confirmation() {
   const navigation = useNavigation();
 
   function handleMoveOn() {
-    navigation.navigate("PlantsSelect");
+    navigation.navigate("PlantSelect");
   }
   return (
     <SafeAreaView style={styles.container}>

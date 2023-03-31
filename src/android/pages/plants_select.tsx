@@ -20,7 +20,7 @@ export function APlantsSelect() {
           data={[1, 2, 3, 4, 5]}
           renderItem={({ item }) => <EnviromentButton title="Cozinha" active />}
           horizontal
-          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.enviromentList}
         />
       </View>
@@ -35,13 +35,14 @@ const styles = StyleSheet.create({
   },
   header: {
     paddingHorizontal: 30,
+    paddingTop:50,
   },
   title: {
     fontSize: 17,
     color: colors.heading,
     fontFamily: fonts.heading,
     lineHeight: 20,
-    marginTop: 15,
+    marginTop: 40,
   },
   subtitle: {
     fontSize: 17,
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
     height: 40,
     justifyContent: 'center',
     paddingBottom: 5,
-    marginLeft: 32,
+    paddingLeft: 32,
     marginVertical: 32,
   },
 });

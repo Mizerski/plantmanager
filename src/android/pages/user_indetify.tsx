@@ -11,11 +11,10 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+
 import colors from "../../../styles/colors";
-import { ButtonUserIndetify } from "../components/button_userIndetify";
 import fonts from "../../../styles/fonts";
-import { TitleComponent } from "../components/title_component";
+import { ButtonUserIndetify } from "../components/button_userIndetify";
 
 export function AUserIndetify() {
   const [isFocused, setIsFocused] = useState(false);
@@ -50,7 +49,9 @@ export function AUserIndetify() {
             <View style={styles.form}>
               <View style={styles.header}>
                 <Text style={styles.emote}>{isFilled ? "😄" : "😀"}</Text>
-                <TitleComponent text={`Como podemos \nchamar você?`} style={{marginTop: 15}}/>
+                <Text style={styles.title}>
+                  Como podemos {"\n"}chamar você?
+                </Text>
               </View>
               <TextInput
                 style={[
@@ -63,9 +64,7 @@ export function AUserIndetify() {
                 onChangeText={handleInputChanges}
               />
               <View style={styles.footer}>
-                <TouchableOpacity onPress={handleStart} >
-                  <ButtonUserIndetify/>
-                </TouchableOpacity>
+                <ButtonUserIndetify title="Confirmar" onPress={handleStart} />
               </View>
             </View>
           </View>
@@ -101,6 +100,14 @@ const styles = StyleSheet.create({
     marginTop: 50,
     padding: 10,
     textAlign: "center",
+  },
+  title: {
+    fontSize: 24,
+    lineHeight: 32,
+    textAlign: "center",
+    color: colors.heading,
+    fontFamily: fonts.heading,
+    marginTop: 20,
   },
   footer: {
     marginTop: 40,

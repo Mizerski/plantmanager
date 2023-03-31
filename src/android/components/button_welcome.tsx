@@ -34,10 +34,12 @@ const styles = StyleSheet.create({
     height: 56,
     width: 56,
   },
+  //
   buttonText: {
     color: colors.white,
     fontSize: 24,
   },
+  //
   buttonIcon: {
     fontSize: 32,
   },

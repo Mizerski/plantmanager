@@ -25,7 +25,7 @@ export function AWelcome() {
         <Image source={wateringImg} style={styles.image} resizeMode="contain" />
 
         <Text style={styles.subtitle}>
-          Não esqueça mais de regar suas {"\n"} plantas. Nós cuidamos de lembrar você
+          Não esqueça mais de regar suas {"\n"}plantas. Nós cuidamos de lembrar você
           sempre que precisar.
         </Text>
 
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   subtitle: {
     textAlign: "center",
     fontSize: 18,
-    paddingHorizontal: 20,
+    paddingHorizontal: 16,
     color: colors.heading,
     fontFamily: fonts.text,
   },

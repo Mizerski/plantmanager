@@ -1,12 +1,75 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Text, View, StyleSheet, FlatList } from "react-native";
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 import { EnviromentButton } from "../components/enviroment_button";
 import { Header } from "../components/header";
+import { PlantCardPrimary } from "../components/plant_card_primary";
+import api from "../services/api";
+
+interface EnviromentProps {
+  key: string;
+  title: string;
+}
+interface PlantProps {
+  id: string;
+  name: string;
+  about: string;
+  water_tips: string;
+  photo: string;
+  environments: [string];
+  frequency: {
+    times: number;
+    repeat_every: string;
+  };
+}
 
 export function PlantsSelect() {
+  const [enviroments, setEnviroments] = useState<EnviromentProps[]>([]);
+
+  const [plants, setPlants] = useState<PlantProps[]>([]);
+
+  const [filteredPlants, setFilteredPlants] = useState<PlantProps[]>([]);
+
+  const [enviromentSelected, setEnviromentSelected] = useState("all");
+
+  function handleEnviromentSelected(enviroment: string) {
+    setEnviromentSelected(enviroment);
+
+    if (enviroment == "all") return setFilteredPlants(plants);
+
+    const filtered = plants.filter((plant) =>
+      plant.environments.includes(enviroment)
+    );
+
+    setFilteredPlants(filtered);
+  }
+
+  useEffect(() => {
+    async function fetchEnviroment() {
+      const { data } = await api.get("plants_environments?_sort=title&asc");
+
+      setEnviroments([
+        {
+          key: "all",
+          title: "Todos",
+        },
+        ...data,
+      ]);
+    }
+    fetchEnviroment();
+  }, []);
+
+  useEffect(() => {
+    async function fetchPlants() {
+      const { data } = await api.get("plants?_sort=name&_order=asc");
+
+      setPlants(data);
+    }
+    fetchPlants();
+  }, []);
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -17,11 +80,25 @@ export function PlantsSelect() {
 
       <View>
         <FlatList
-          data={[1, 2, 3, 4, 5]}
-          renderItem={({ item }) => <EnviromentButton title="Cozinha" active />}
+          data={enviroments}
+          renderItem={({ item }) => (
+            <EnviromentButton
+              title={item.title}
+              active={item.key === enviromentSelected}
+              onPress={() => handleEnviromentSelected(item.key)}
+            />
+          )}
           horizontal
-          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.enviromentList}
+        />
+      </View>
+      <View style={styles.plants}>
+        <FlatList
+          data={filteredPlants}
+          renderItem={({ item }) => <PlantCardPrimary data={item} />}
+          showsVerticalScrollIndicator={false}
+          numColumns={2}
         />
       </View>
     </View>
@@ -30,8 +107,8 @@ export function PlantsSelect() {
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
     flex: 1,
+    backgroundColor: colors.background,
   },
   header: {
     paddingHorizontal: 30,
@@ -49,11 +126,16 @@ const styles = StyleSheet.create({
     color: colors.heading,
     fontFamily: fonts.text,
   },
-  enviromentList:{
+  enviromentList: {
     height: 40,
-    justifyContent: 'center',
+    justifyContent: "center",
     paddingBottom: 5,
     marginLeft: 32,
     marginVertical: 32,
+  },
+  plants: {
+    flex: 1,
+    paddingHorizontal: 32,
+    justifyContent: "center",
   },
 });

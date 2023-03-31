@@ -10,8 +10,9 @@ import {
   Platform,
   TouchableWithoutFeedback,
   Keyboard,
+  Alert,
 } from "react-native";
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 import { ButtonUserIndetify } from "../components/button";
@@ -35,6 +36,10 @@ export function UserIndetify() {
   const navigation = useNavigation();
 
   function handleStart() {
+    if (!name) return Alert.alert("Por favor me diga seu nome 👉👈");
+
+    AsyncStorage.setItem('@plantmanager:user', name);
+
     navigation.navigate("Confirmation");
   }
 
@@ -42,8 +47,7 @@ export function UserIndetify() {
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView
         style={styles.content}
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
-      >
+        behavior={Platform.OS === "ios" ? "padding" : "height"}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.content}>
             <View style={styles.form}>

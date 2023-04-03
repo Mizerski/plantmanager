@@ -19,7 +19,7 @@ export function AWelcome() {
     <SafeAreaView style={styles.container}>
       <View style={styles.viewWellcome}>
         <Text style={styles.title}>
-          Gerencie {"\n"}suassssss plantas de {"\n"} forma fácil
+          Gerencie {"\n"}suas plantas de {"\n"} forma fácil
         </Text>
 
         <Image source={wateringImg} style={styles.image} resizeMode="contain" />

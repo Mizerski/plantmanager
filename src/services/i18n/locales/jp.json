@@ -1,0 +1,16 @@
+{
+    "titleP1": "簡単に植物を管理する",
+    "aboutP1": "もう植物の水やりを忘れることはありません。必要なときにいつでもリマインドしてくれます。",
+    "titleP2": "どうやって呼びますか？",
+    "placeholderP2": "あなたの名前を入力してください",
+    "buttonP2": "確認",
+    "titleP3": "完了",
+    "aboutP3":"今から、あなたの植物を大切にお世話いたします。",
+    "titleP4":"どのような環境に",
+    "titleP4.2":"植物を置きたいですか？",
+    "enviromentText1":"キッチン",
+    "enviromentText2":"リビングルーム",
+    "enviromentText3":"バスルーム",
+    "enviromentText4":"寝室",
+    "enviromentText5":"バルコニー"
+    }

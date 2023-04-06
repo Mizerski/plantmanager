@@ -15,6 +15,7 @@ import {
 import colors from "../../../styles/colors";
 import fonts from "../../../styles/fonts";
 import { ButtonUserIndetify } from "../components/button_userIndetify";
+import { t } from "i18next";
 
 export function AUserIndetify() {
   const [isFocused, setIsFocused] = useState(false);
@@ -37,6 +38,9 @@ export function AUserIndetify() {
   function handleStart() {
     navigation.navigate("Confirmation");
   }
+  function translate() {
+ return t("Digite seu nome") 
+}
 
   return (
     <SafeAreaView style={styles.container}>
@@ -50,7 +54,7 @@ export function AUserIndetify() {
               <View style={styles.header}>
                 <Text style={styles.emote}>{isFilled ? "😄" : "😀"}</Text>
                 <Text style={styles.title}>
-                  Como podemos {"\n"}chamar você?
+                  {t("Como podemos chamar você?")}
                 </Text>
               </View>
               <TextInput
@@ -58,13 +62,13 @@ export function AUserIndetify() {
                   styles.input,
                   (isFocused || isFilled) && { borderColor: colors.green },
                 ]}
-                placeholder="Digite seu nome"
+                placeholder={translate()}
                 onBlur={handlerInputBlur}
                 onFocus={handlerInputFocus}
                 onChangeText={handleInputChanges}
               />
               <View style={styles.footer}>
-                <ButtonUserIndetify title="Confirmar" onPress={handleStart} />
+                <ButtonUserIndetify title={t("Confirmar")} onPress={handleStart} />
               </View>
             </View>
           </View>

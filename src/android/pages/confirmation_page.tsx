@@ -5,6 +5,7 @@ import colors from "../../../styles/colors";
 import fonts from "../../../styles/fonts";
 import { ButtonUserIndetify } from "../components/button_userIndetify";
 import { useNavigation } from "@react-navigation/native";
+import { t } from "i18next";
 
 export function AConfirmation() {
   const navigation = useNavigation();
@@ -16,13 +17,12 @@ export function AConfirmation() {
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <Text style={styles.emote}>{"😄"}</Text>
-        <Text style={styles.title}>Prontinho</Text>
+        <Text style={styles.title}>{t("Prontinho")}</Text>
         <Text style={styles.subtitle}>
-          Agora vamos começar a cuidar das suas {"\n"} plantinhas com muito
-          cuidado.
+          {t("Agora vamos começar a cuidar das suas platinhas com muito cuidado.")}
         </Text>
         <View style={styles.footer}>
-          <ButtonUserIndetify title="confirmar" onPress={handleMoveOn}/>
+          <ButtonUserIndetify title={t("Confirmar")} onPress={handleMoveOn}/>
         </View>
       </View>
     </SafeAreaView>

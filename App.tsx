@@ -1,5 +1,7 @@
 import React from "react";
 import AppLoading from "expo-app-loading";
+import i18n from './src/services/i18n/i18n';
+import { initReactI18next } from "react-i18next";
 
 import {
   useFonts,
@@ -15,3 +17,4 @@ export default function App() {
 
   return <Routes />;
 }
+initReactI18next.init(i18n);

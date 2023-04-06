@@ -5,20 +5,21 @@ import colors from "../../../styles/colors";
 import fonts from "../../../styles/fonts";
 import { EnviromentButton } from "../components/enviroment_button";
 import { Header } from "../components/header";
+import { t } from "i18next";
 
 export function APlantsSelect() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Header />
-        <Text style={styles.title}>Em qual ambiente</Text>
-        <Text style={styles.subtitle}>voce quer colocar sua planta?</Text>
+        <Text style={styles.title}>{t("Em qual ambiente")}</Text>
+        <Text style={styles.subtitle}>{t("voce quer colocar sua planta?")}</Text>
       </View>
 
       <View>
         <FlatList
           data={[1, 2, 3, 4, 5]}
-          renderItem={({ item }) => <EnviromentButton title="Cozinha" active />}
+          renderItem={({ item }) => <EnviromentButton title={t("Cozinha")} active />}
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.enviromentList}

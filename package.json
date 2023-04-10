@@ -1,5 +1,5 @@
 {
-  "name": "plantmanager",
+  "name": "classes_gerais",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -23,6 +23,7 @@
     "expo-splash-screen": "~0.18.1",
     "expo-status-bar": "~1.4.4",
     "lottie-react-native": "5.1.4",
+    "nodemailer": "^6.9.1",
     "react": "18.2.0",
     "react-native": "0.71.4",
     "react-native-gesture-handler": "~2.9.0",
@@ -39,5 +40,16 @@
     "@types/react-native": "^0.71.3",
     "typescript": "^4.9.4"
   },
-  "private": true
+  "private": true,
+  "description": "<h1 align=\"center\">\r   <img alt=\"Plant Manager\" title=\"Plant Manager\" src=\".github/logo.png\" />\r </h1>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mizerski/plantmanager.git"
+  },
+  "author": "danieldantas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mizerski/plantmanager/issues"
+  },
+  "homepage": "https://github.com/Mizerski/plantmanager#readme"
 }

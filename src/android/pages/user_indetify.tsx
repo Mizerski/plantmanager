@@ -32,6 +32,7 @@ export function AUserIndetify() {
   function handleInputChanges(value: string) {
     setIsFilled(!!value);
     setName(value);
+    localStorage.setItem('username', value);
   }
   const navigation = useNavigation();
 

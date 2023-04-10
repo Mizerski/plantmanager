@@ -1,5 +1,6 @@
 import React from "react";
 
+import { ALogin } from "../pages/login_page";
 import { AWelcome } from "../pages/welcome_page";
 import { AUserIndetify } from "../pages/user_indetify";
 import { AConfirmation } from "../pages/confirmation_page";
@@ -17,6 +18,8 @@ const AppRoutes: React.FC = () => (
       },
     }}
   >
+    <StackRoutes.Screen name="ALogin" component={ALogin} />
+
     <StackRoutes.Screen name="AWelcome" component={AWelcome} />
 
     <StackRoutes.Screen name= "UserIndetify" component={AUserIndetify} />

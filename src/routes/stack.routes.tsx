@@ -14,6 +14,7 @@ import { APlantsSelect } from "../android/pages/plants_select";
 import colors from "../../styles/colors";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Platform } from "react-native";
+import { ALogin } from "../android/pages/login_page";
 
 const StackRoutes = createStackNavigator();
 const AppRoutes: React.FC = () => (
@@ -25,6 +26,8 @@ const AppRoutes: React.FC = () => (
       },
     }}
   >
+    <StackRoutes.Screen name="ALogin" component={ALogin} />
+
     <StackRoutes.Screen name="Welcome" component={Platform.OS =="ios"? Welcome : AWelcome} />
 
     <StackRoutes.Screen name="UserIndetify" component={Platform.OS =="ios"?UserIndetify:AUserIndetify} />

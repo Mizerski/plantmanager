@@ -27,7 +27,7 @@ export function ALogin() {
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>{"Plantmanager"}</Text>
       <View style={styles.form} >
-        <DefaultInput text={t("example@.com")} />
+        <DefaultInput text={t("example@.com")}/>
         <DefaultInput text={t("Senha")} secureTextEntry={true} />
       </View>
       <View style={styles.footer}>

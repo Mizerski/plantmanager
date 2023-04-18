@@ -14,47 +14,40 @@ import colors from "../../../styles/colors";
 import fonts from "../../../styles/fonts";
 import { ButtonUserIndetify } from '../components/button_userIndetify';
 
-export function ALogin() {
+export function ASign() {
   const [inputValues, setInputValues] = useState({ email: '', password: '' });
 
   const handleInputChange = (inputName: string, inputValue: string) => {
     setInputValues({ ...inputValues, [inputName]: inputValue });
   }
-
   const { t } = useTranslation();
   const navigation = useNavigation();
-
   function handleStart() {
     const regesEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-    if (regesEmail.test(inputValues.email)&& inputValues.password.length>7) {
+    if (regesEmail.test(inputValues.email) && inputValues.password.length > 7) {
       navigation.navigate("Welcome");
       console.log("EMAIL VALIDO");
       console.log("SENHA VALIDA");
-    } else if(!regesEmail.test(inputValues.email)){
+    } else if (!regesEmail.test(inputValues.email)) {
       console.log("EMAIL INVALIDO");
-    }else console.log("SENHA INVALIDA");
-    
-  }
-  function handleLogin() {
-    navigation.navigate("ASign");
-  }  
+    } else console.log("SENHA INVALIDA");
 
+  }
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>{"Plantmanager"}</Text>
       <View style={styles.form} >
-        <DefaultInput text={t("exemplo@.com")} value={inputValues.email} onChangeText={(text) => handleInputChange('email', text)} />
+        <DefaultInput text={t("example@.com")} value={inputValues.email} onChangeText={(text) => handleInputChange('email', text)} />
         <DefaultInput text={t("Senha")} secureTextEntry={true} value={inputValues.password} onChangeText={(text) => handleInputChange('password', text)} />
       </View>
       <View style={styles.button}>
-        <ButtonUserIndetify title={t("Conectar-se")} onPress={handleStart} />
-        <Text style={styles.sign} onPress={handleLogin}>{t("Cadastre-se")}</Text>
+        <ButtonUserIndetify title={t("Cadastre-se")} onPress={handleStart} />
       </View>
     </SafeAreaView>
   );
-}
 
+}
 const styles = StyleSheet.create({
   container: {
     marginVertical: 60,
@@ -90,5 +83,6 @@ const styles = StyleSheet.create({
   button: {
     width: 231,
     marginTop: 50
+
   },
 });
